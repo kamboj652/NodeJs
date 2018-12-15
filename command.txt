@@ -10,3 +10,6 @@ npm install --save-dev nodemon
 
 For login we will install morgan
 npm install --save morgan
+
+This module is for parse the body of the request
+npm install --save body-parser
