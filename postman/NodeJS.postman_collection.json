@@ -32,13 +32,110 @@
 					"response": []
 				},
 				{
-					"name": "Post Product",
+					"name": "Get Product by Id",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/products/{{productId}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"products",
+								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products: Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/products/5c152428909cd02ffcd26795",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"products",
+								"5c152428909cd02ffcd26795"
+							]
+						},
+						"description": "When the id is valid but doesn't exist"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products: Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/products/sdfds34",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"products",
+								"sdfds34"
+							]
+						},
+						"description": "When the id is invalid type"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "427dc904-536f-4453-9b1f-c0fbc47bc2b1",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"console.log(jsonData.createdProduct._id);",
+									"",
+									"pm.environment.set(\"productId\", jsonData.createdProduct._id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Harry Potter 5\",\n\t\"price\": \"12.99\"\n}"
 						},
 						"url": {
 							"raw": "http://{{HOST}}:{{PORT}}/products",
@@ -58,13 +155,20 @@
 					"name": "Patch Product",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "[\n\t{\"propName\":\"name\", \"value\": \"Harry potter 10\"},\n\t{\"propName\":\"price\", \"value\": \"100\"}\n]"
 						},
 						"url": {
-							"raw": "http://{{HOST}}:{{PORT}}/products/special",
+							"raw": "http://{{HOST}}:{{PORT}}/products/5c152206fcff0a737c6f85f8",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
@@ -72,7 +176,7 @@
 							"port": "{{PORT}}",
 							"path": [
 								"products",
-								"special"
+								"5c152206fcff0a737c6f85f8"
 							]
 						}
 					},
@@ -88,7 +192,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}:{{PORT}}/products/special",
+							"raw": "http://{{HOST}}:{{PORT}}/products/{{productId}}",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
@@ -96,7 +200,7 @@
 							"port": "{{PORT}}",
 							"path": [
 								"products",
-								"special"
+								"{{productId}}"
 							]
 						}
 					},
@@ -134,10 +238,17 @@
 					"name": "Post Order",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"productId\": \"123dsffsd12\",\n\t\"quantity\": \"100\"\n}"
 						},
 						"url": {
 							"raw": "http://{{HOST}}:{{PORT}}/orders",
