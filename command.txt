@@ -1,0 +1,9 @@
+setup node server
+npm init
+
+install express module
+npm install --save express
+
+
+We don't have to restart the server everytime we change some code
+npm install --save-dev nodemon 
