@@ -5,5 +5,8 @@ install express module
 npm install --save express
 
 
-We don't have to restart the server everytime we change some code
-npm install --save-dev nodemon 
+We don't have to restart the server everytime we change some code after install this add at "package.json" -> scripts -> "start" :"nodemon server.js" and for start the project use npm start
+npm install --save-dev nodemon
+
+For login we will install morgan
+npm install --save morgan
