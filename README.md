@@ -1,8 +1,8 @@
-#Creating a RESTful API with Node.js
+# Creating a RESTful API with Node.js
 
 This repository is just for fun and undestading the concepts of node.js and mongoDB with mongoose
 
-##Usage
+## Usage
 
 Checkout the branch which one do you want. 
 
