@@ -17,3 +17,7 @@ npm install --save body-parser
 
 Add new module mongoose for connect to mongoose
 npm install --save mongoose
+
+
+Form data body parser
+npm install --save multer
