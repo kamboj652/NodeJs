@@ -317,6 +317,37 @@
 			"name": "User",
 			"item": [
 				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"test3@test.com\",\n\t\"password\":\"tester\"\n}"
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/user/login",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create user",
 					"request": {
 						"method": "POST",

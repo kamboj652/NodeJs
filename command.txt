@@ -24,3 +24,6 @@ npm install --save multer
 
 Encrypt user password in database
 npm install bcrypt --save
+
+For webtoken we use this module
+npm install jsonwebtoken --save
