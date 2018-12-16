@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+const userRoutes = require('./api/routes/user');
 
 mongoose.connect('mongodb+srv://node-shop:'
 +process.env.MONGO_ATLAS_PWD+
@@ -34,6 +35,7 @@ app.use((req,res,next)=>{
 //Routes which should handle requests
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/user', userRoutes);
 
 //any error that occurs with the request
 app.use((req,res,next)=>{

@@ -21,3 +21,6 @@ npm install --save mongoose
 
 Form data body parser
 npm install --save multer
+
+Encrypt user password in database
+npm install bcrypt --save
