@@ -117,7 +117,7 @@
 									"",
 									"console.log(jsonData.createdProduct._id);",
 									"",
-									"pm.environment.set(\"productId\", jsonData.createdProduct._id);"
+									"pm.environment.set(\"id\", Math.random());"
 								],
 								"type": "text/javascript"
 							}
@@ -135,7 +135,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Harry Potter 5\",\n\t\"price\": \"12.99\"\n}"
+							"raw": "{\n\t\"name\": \"Harry Potter 6\",\n\t\"price\": \"10\"\n}"
 						},
 						"url": {
 							"raw": "http://{{HOST}}:{{PORT}}/products",
@@ -235,6 +235,29 @@
 					"response": []
 				},
 				{
+					"name": "Get Orders by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/orders",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Post Order",
 					"request": {
 						"method": "POST",
@@ -248,7 +271,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"productId\": \"123dsffsd12\",\n\t\"quantity\": \"100\"\n}"
+							"raw": "{\n\t\"productId\": \"5c15350820ce7b2940fec5a8\",\n\t\"quantity\": \"2\"\n}"
 						},
 						"url": {
 							"raw": "http://{{HOST}}:{{PORT}}/orders",
