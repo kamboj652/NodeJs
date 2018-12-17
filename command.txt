@@ -27,3 +27,7 @@ npm install bcrypt --save
 
 For webtoken we use this module
 npm install jsonwebtoken --save
+
+
+Request - Simplified http client
+npm install request --save
